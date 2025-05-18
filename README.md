@@ -17,7 +17,15 @@ This allows the business team to easily spot users who are using multiple produc
 
 # Assessment_Q2: Transaction Frequency Analysis
 Explanation:
-- The first part of the query groups all transactions by user in every month, counting how many transactions each user made in that month.
-- The second part of the query calculates the average number of transactions per month for each user by averaging the monthly counts.
+- The first part of the query groups all transactions by user in every month, counting how many transactions each user made in that month (with a CTE).
+- The second part of the query calculates the average number of transactions per month for each user by averaging the monthly counts (with a CTE).
 - The third part groups users into three categories based on their average monthly transactions — High, Medium, or Low frequency.
 - Finally, the query returns the number of users each category and finds the average transactions per user in those categories.
+
+# Assessment_Q3:  Account Inactivity Alert
+Explanation:
+- The first part of the query considers transaction records to find the most recent (latest) transaction date for only successful transactions for each plan (with a CTE).
+- The second part of the query matches this latest transaction date with each plan and categorizes the plan to either "Savings" or "Investment" type (with a CTE).
+- Finally, the query filters only plans where the last transaction happened over 365 days ago, and showing how many days it has been since the last transaction. Then, it is sorted so the longest inactive accounts come first.
+
+The operations team can easily identify accounts that needs attention or follow-up with this query due to inactiveness.
